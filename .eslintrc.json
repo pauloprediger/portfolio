@@ -15,19 +15,39 @@
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "import/extensions": [
-      "error",
+      "never",
       "ignorePackages",
       {
         "js": "never",
         "jsx": "never",
         "ts": "never",
-        "tsx": "never"
+        "tsx": "never",
+        "css": "never"
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "**/vite.config.js",
+          "**/*.test.js",
+          "**/*.spec.js",
+          "src/**/*.js",
+          "src/**/*.jsx",
+          "src/**/*.ts",
+          "src/**/*.tsx"
+        ]
       }
     ]
   },
-  
   "plugins": ["react"],
   "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [["@", "./src"]],
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
+      }
+    },
     "react": {
       "version": "detect"
     }
