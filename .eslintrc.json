@@ -40,7 +40,7 @@
       }
     ]
   },
-  "plugins": ["react"],
+  "plugins": ["react, react-native"],
   "settings": {
     "import/resolver": {
       "alias": {
